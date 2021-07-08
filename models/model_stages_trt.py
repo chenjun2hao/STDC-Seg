@@ -126,14 +126,23 @@ class ContextPath(nn.Module):
             exit(0)
 
         if self.input_size == 512:
-            self.H8 = torch.tensor(64)
-            self.W8 = torch.tensor(128)
+            # self.H8 = torch.tensor(64)
+            # self.W8 = torch.tensor(128)
 
-            self.H16 = torch.tensor(32)
-            self.W16 = torch.tensor(64)
+            # self.H16 = torch.tensor(32)
+            # self.W16 = torch.tensor(64)
 
-            self.H32 = torch.tensor(16)
-            self.W32 = torch.tensor(32)
+            # self.H32 = torch.tensor(16)
+            # self.W32 = torch.tensor(32)
+
+            self.H8 = torch.tensor(60)
+            self.W8 = torch.tensor(80)
+
+            self.H16 = torch.tensor(30)
+            self.W16 = torch.tensor(40)
+
+            self.H32 = torch.tensor(15)
+            self.W32 = torch.tensor(20)
         elif self.input_size == 768:
             self.H8 = torch.tensor(96)
             self.W8 = torch.tensor(192)
@@ -337,8 +346,10 @@ class BiSeNet(nn.Module):
         self.conv_out_sp2 = BiSeNetOutput(sp2_inplanes, 64, 1)
 
         if self.input_size == 512:
-            self.H = torch.tensor(512)
-            self.W = torch.tensor(1024)
+            # self.H = torch.tensor(512)
+            # self.W = torch.tensor(1024)
+            self.H = torch.tensor(480)
+            self.W = torch.tensor(640)
         elif self.input_size == 768:
             self.H = torch.tensor(768)
             self.W = torch.tensor(1536)

@@ -265,8 +265,8 @@ if __name__ == "__main__":
     # use_boundary_2=False, use_boundary_4=False, use_boundary_8=True, use_boundary_16=False)
 
     #STDC1-Seg75 mIoU 0.7450
-    # evaluatev0('./checkpoints/STDC1-Seg/model_maxmIOU75.pth', dspth='./data', backbone='STDCNet813', scale=0.75, 
-    # use_boundary_2=False, use_boundary_4=False, use_boundary_8=True, use_boundary_16=False)
+    evaluatev0('./checkpoints/STDC1-Seg/model_maxmIOU50.pth', dspth='./data', backbone='STDCNet813', scale=0.75, 
+    use_boundary_2=False, use_boundary_4=False, use_boundary_8=True, use_boundary_16=False)
 
 
     #STDC2-Seg50 mIoU 0.7424
@@ -274,8 +274,8 @@ if __name__ == "__main__":
     # use_boundary_2=False, use_boundary_4=False, use_boundary_8=True, use_boundary_16=False)
 
     #STDC2-Seg75 mIoU 0.7704
-    evaluatev0('./checkpoints/STDC2-Seg/model_maxmIOU75.pth', dspth='./data', backbone='STDCNet1446', scale=0.75, 
-    use_boundary_2=False, use_boundary_4=False, use_boundary_8=True, use_boundary_16=False)
+    # evaluatev0('./checkpoints/STDC2-Seg/model_maxmIOU75.pth', dspth='./data', backbone='STDCNet1446', scale=0.75, 
+    # use_boundary_2=False, use_boundary_4=False, use_boundary_8=True, use_boundary_16=False)
 
    
 

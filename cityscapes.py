@@ -27,7 +27,7 @@ class CityScapes(Dataset):
 
         with open('./cityscapes_info.json', 'r') as fr:
             labels_info = json.load(fr)
-        self.lb_map = {el['id']: el['trainId'] for el in labels_info}
+        self.lb_map = {el['id']: el['trainId'] for el in labels_info}           # cityscape标注了35个id，但是衡量时只用19个类别好像。
         
 
         ## parse img directory

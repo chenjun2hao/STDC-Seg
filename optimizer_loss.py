@@ -43,7 +43,7 @@ class Optimizer(object):
                 lr = lr0,
                 momentum = momentum,
                 weight_decay = wd)
-        self.warmup_factor = (self.lr0/self.warmup_start_lr)**(1./self.warmup_steps)
+        self.warmup_factor = (self.lr0/self.warmup_start_lr)**(1./self.warmup_steps)            # warmup_factor:1.0069316688
 
 
     def get_lr(self):
@@ -57,7 +57,7 @@ class Optimizer(object):
 
     def step(self):
         self.lr = self.get_lr()
-        for pg in self.optim.param_groups:
+        for pg in self.optim.param_groups:              # 参数的学习率设定
             if pg.get('lr_mul', False):
                 pg['lr'] = self.lr * 10
             else:

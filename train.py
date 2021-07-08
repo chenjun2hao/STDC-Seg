@@ -50,13 +50,13 @@ def parse_args():
             '--n_workers_val',
             dest = 'n_workers_val',
             type = int,
-            default = 0,
+            default = 1,
             )
     parse.add_argument(
             '--n_img_per_gpu',
             dest = 'n_img_per_gpu',
             type = int,
-            default = 16,
+            default = 2,
             )
     parse.add_argument(
             '--max_iter',
@@ -92,13 +92,13 @@ def parse_args():
             '--respath',
             dest = 'respath',
             type = str,
-            default = None,
+            default = "checkpoints/train_STDC1-Seg/",
             )
     parse.add_argument(
             '--backbone',
             dest = 'backbone',
             type = str,
-            default = 'CatNetSmall',
+            default = 'STDCNet813',
             )
     parse.add_argument(
             '--pretrain_path',
@@ -128,7 +128,7 @@ def parse_args():
             '--use_boundary_8',
             dest = 'use_boundary_8',
             type = str2bool,
-            default = False,
+            default = True,
             )
     parse.add_argument(
             '--use_boundary_16',
@@ -284,7 +284,7 @@ def train():
         if (not use_boundary_2) and use_boundary_4 and use_boundary_8:
             out, out16, out32, detail4, detail8 = net(im)
 
-        if (not use_boundary_2) and (not use_boundary_4) and use_boundary_8:
+        if (not use_boundary_2) and (not use_boundary_4) and use_boundary_8:            # @@ 默认
             out, out16, out32, detail8 = net(im)
 
         if (not use_boundary_2) and (not use_boundary_4) and (not use_boundary_8):

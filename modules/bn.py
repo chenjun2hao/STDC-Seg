@@ -115,8 +115,14 @@ class InPlaceABNSync(ABN):
     """
 
     def forward(self, x):
-        return inplace_abn_sync(x, self.weight, self.bias, self.running_mean, self.running_var,
+        # return inplace_abn_sync(x, self.weight, self.bias, self.running_mean, self.running_var,
+        #                            self.training, self.momentum, self.eps, self.activation, self.slope)
+        x, _, _ = inplace_abn_sync(x, self.weight, self.bias, self.running_mean, self.running_var,
                                    self.training, self.momentum, self.eps, self.activation, self.slope)
+        # x, _, _ = inplace_abn_sync(
+        #     x, self.weight, self.bias, self.running_mean, self.running_var, self.training, self.momentum, self.eps,
+        #     self.activation, self.activation_param, self.group)
+        return x
 
     def __repr__(self):
         rep = '{name}({num_features}, eps={eps}, momentum={momentum},' \

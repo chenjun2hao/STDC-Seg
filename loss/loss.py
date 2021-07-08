@@ -20,9 +20,9 @@ class OhemCELoss(nn.Module):
     def forward(self, logits, labels):
         N, C, H, W = logits.size()
         loss = self.criteria(logits, labels).view(-1)
-        loss, _ = torch.sort(loss, descending=True)
+        loss, _ = torch.sort(loss, descending=True)         # 降序排列
         if loss[self.n_min] > self.thresh:
-            loss = loss[loss>self.thresh]
+            loss = loss[loss>self.thresh]                   # 取loss大于0.7的， loss越大对应困难样本
         else:
             loss = loss[:self.n_min]
         return torch.mean(loss)
